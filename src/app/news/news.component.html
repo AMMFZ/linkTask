@@ -1,0 +1,64 @@
+<div class="news">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/">home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">news</li>
+      </ol>
+    </nav>
+    <h2>news</h2>
+
+    <div class="newsform">
+      <form>
+        <div class="form-group">
+          <label>from</label>
+          <input type="date" class="form-control" />
+          <span class="dateIcon">
+            <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>to</label>
+          <input type="date" class="form-control" />
+          <span class="dateIcon">
+            <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>category</label>
+          <select name="selOne" class="form-control">
+            <option value="one">select one</option>
+            <option value="two">select two</option>
+            <option value="three">select three</option>
+          </select>
+        </div>
+        <div class="form-group search">
+          <input type="text" class="form-control" placeholder="search services" />
+          <button class="btn btn-success"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+      <span class="sortBy" (click)="chang_sortCase()">sort by <i class="fa fa-exchange" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <div class="news_content">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let artic of sort">
+          <div class="box_content">
+            <img class="img-responsive" [attr.src]="artic.urlToImage" alt="loading...">
+            <div class="box_info">
+              <div class="art_icons">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+              </div>
+              <h3><a href="#" [routerLink]="['/details',artic.id]">{{artic.title | slice:0:60}} ...</a></h3>
+              <p>{{artic.content | slice:0:80}} ...</p>
+              <span><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+                 {{artic.publishedAt}}</span>
+            </div><!-- #.box_info -->
+          </div><!-- #.box_content -->
+        </div><!-- #.col-md-4 -->
+      </div><!-- #.row -->
+    </div><!-- #.news_content -->
+  </div><!-- #.container -->
+</div>

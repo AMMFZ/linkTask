@@ -1,0 +1,51 @@
+<div class="details">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/">home</a></li>
+        <li class="breadcrumb-item"><a href="#" routerLink="/news">news</a></li>
+        <li class="breadcrumb-item active" aria-current="page">new details</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>new details</h2>
+        <div class="one_artic" *ngFor="let elm of articlesDetails">
+          <img [attr.src]="elm.urlToImage" alt="loading..." class="img-responsive" />
+          <div class="details_info">
+            <span class="cat">category name</span>
+            <div class="art_title">
+              <h3>{{elm.title}}</h3>
+              <div class="art_icons">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+              </div><!-- #.art_icons -->
+            </div><!-- #.art_title -->
+            <p>{{elm.content}} Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus nesciunt, maxime iste porro animi adipisci! Ea ducimus aperiam alias aliquid asperiores officia quod esse vitae temporibus quidem, <br /> <br/>omnis voluptatum repellendus Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore facilis corrupti aut ut pariatur cupiditate quas assumenda quasi, minus distinctio voluptas unde commodi ea porro non reprehenderit maxime nam? Debitis! {{elm.content}} <br /> <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas doloremque saepe, fugiat odio autem non maiores quaerat porro accusamus obcaecati quo molestias, natus numquam quidem velit? Expedita, dicta eaque. {{elm.content}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore vel impedit maiores hic beatae corrupti aut accusantium odio, expedita tempora, possimus ea, soluta commodi deserunt quos placeat officia! Fuga, expedita. <br /> <br />
+              {{elm.content}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem omnis voluptate natus asperiores tenetur, et quidem minus dolore impedit excepturi dolores maiores delectus aperiam veritatis ex, explicabo odio. Laudantium, a! Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veniam tenetur expedita facere nisi. Quas harum unde molestiae, quisquam repellendus sunt asperiores ratione rem laudantium cumque itaque, quidem, et alias.</p>
+          </div>
+        </div><!-- #.one_artic -->
+      </div><!-- #.col-md-12 -->
+    </div><!-- #.row -->
+
+    <div class="related">
+      <h3>related topics</h3>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let related of just_three">
+          <div class="topic">
+            <img [attr.src]="related.urlToImage" />
+            <div class="about">
+              <span>category</span>
+              <h4>{{related.title | slice:0:30}}</h4>
+              <a href="#" [routerLink]="['/details',related.id]" (click)="reloadPage(related.id)">
+                view details
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div><!-- #.topic -->
+        </div><!-- #.col-md-4 -->
+      </div>
+    </div>
+
+  </div><!-- #.container -->
+</div><!-- #.details -->

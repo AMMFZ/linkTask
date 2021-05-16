@@ -1,0 +1,109 @@
+<app-header></app-header>
+<div class="home">
+  <div class="articles">
+    <div class="container">
+      <div class="vAll">
+        <h2>latest news</h2>
+        <a href="#" routerLink="/news">view all <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="home_content">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let artic of sort">
+            <div class="box_content">
+              <img class="img-responsive" [src]="artic.urlToImage" alt="loading...">
+              <div class="box_info">
+                <div class="art_icons">
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </div>
+                <h3><a href="#" [routerLink]="['/details',artic.id]">{{artic.title | slice:0:60}} ...</a></h3>
+                <p>{{artic.content | slice:0:80}} ...</p>
+                <span><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+                   {{artic.publishedAt}}</span>
+              </div><!-- #.box_info -->
+            </div><!-- #.box_content -->
+          </div><!-- #.col-md-4 -->
+        </div><!-- #.row -->
+      </div><!-- #.home_content -->
+    </div><!-- #.container -->
+  </div><!-- #.articles -->
+</div><!-- #.home -->
+
+<div class="how text-center">
+  <h2>how we have helped</h2>
+  <p>see how <span>ai</span> foundation have promoted change locally and to the world</p>
+
+  <div class="how_con">
+    <div class="h_c">
+      <div class="overlay"></div>
+
+      <div class="h_info">
+      <img src="../../assets/imgs/icon5.png" />
+      <strong>find place</strong>
+      <a href="#">+</a>
+      </div>
+    </div>
+
+    <div class="h_c">
+      <div class="overlay"></div>
+
+      <div class="h_info">
+        <img src="../../assets/imgs/icon6.png" />
+        <strong>a'awen</strong>
+        <a href="#">+</a>
+      </div>
+    </div>
+
+    <div class="h_c">
+      <div class="overlay"></div>
+
+      <div class="h_info">
+      <img src="../../assets/imgs/icon2.png" />
+      <strong>omniyat</strong>
+      <a href="#">+</a>
+      </div>
+    </div>
+
+    <div class="h_c">
+      <div class="overlay"></div>
+
+      <div class="h_info">
+      <img src="../../assets/imgs/icon7.png" />
+      <strong>give time</strong>
+      <a href="#">+</a>
+      </div>
+    </div>
+  </div>
+  <div class="how_con">
+    <div class="h_c">
+      <div class="overlay"></div>
+      <div class="h_info">
+
+      <img src="../../assets/imgs/icon1.png" />
+      <strong>tofoula</strong>
+      <a href="#">+</a>
+      </div>
+    </div>
+
+    <div class="h_c">
+      <div class="overlay"></div>
+
+      <div class="h_info">
+      <img src="../../assets/imgs/icon4.png" />
+      <strong>fundraising</strong>
+      <a href="#">+</a>
+      </div>
+    </div>
+
+    <div class="h_c">
+      <div class="overlay"></div>
+
+      <div class="h_info">
+      <img src="../../assets/imgs/icon3.png" />
+      <strong>zakat</strong>
+      <a href="#">+</a>
+      </div>
+    </div>
+  </div>
+</div><!-- #.how -->
